@@ -1,0 +1,32 @@
+
+
+port mapping
+,,,,,,,,,,,,,,,,,,,,,
+
+docker run --name web3 -d -p9000:80 nginx
+docker ps
+on google --> http://192.168.20.146(machine ip):9000
+
+docker exec -ti web3 /bin/bah
+cd/usr/share/nginx/html/
+ls
+echo "web3 page" > index.html
+now refresh the webpage
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 
+
+Volume Mapping
+,,,,,,,,,,,,,,,
+
+mkdir web4
+cd web4/
+vi index.html
+cat index.html
+ls
+pwd
+docker run --name web8 -d -p 9010:80 -v /root/web4/:/usr/share/nginx/html/ nginx
+
+search on google 192.168.20.146:9010
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+

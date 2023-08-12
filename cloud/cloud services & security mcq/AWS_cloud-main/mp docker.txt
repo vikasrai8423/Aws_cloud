@@ -1,0 +1,49 @@
+mkdir website
+cd website
+vi Dockerfile
+
+
+	FROM ubuntu
+	RUN apt update -y
+	RUN apt-get install python3 -y
+	RUN mkdir /app/
+	COPY sample.py /app/
+	CMD ["python3","/app/sample.py"]
+
+vi sample.py
+
+print("hello world")
+
+docker build -t myapp:1.0 .
+docker run --name c1 -ti myapp:1.0
+output====hello world
+*********************create website using Dockerfile*****************************
+mkdir website
+cd website 
+vi Dockerfile
+FROM nginx
+COPY . /usr/share/nginx/html
+EXPOSE 80/tcp
+
+
+
+vi index.html
+teju.........
+
+docker build -t myapp:1.0 .
+docker run --name c1 -p 8080:80 myapp:1.0
+output=======vm browser [http://vm ip | container ip ]:[8080 | 80 ]
+
+
+NGINX portfolio dockerfile
+Mkdir portfolio
+Cd portfolio
+Git clone (git code)
+Ls
+Cd fisrt_lab ……………………..this is from which you git name then go in file
+Vi Dockerfile
+	FROM nginx
+	COPY  . /usr/share/nginx/html
+Docker build –t ptf:1.0 .
+Docker run –name myptf –p 9030:80 –d ptf:1.0
+Go to browser and check

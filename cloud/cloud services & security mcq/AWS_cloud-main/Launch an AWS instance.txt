@@ -1,0 +1,31 @@
+Creating Instance in AWS interface:
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*EC2 > Instances > Launch instance 
+
+*Name and tangs :<name of instance>
+
+*Select > application and os image
+(with tier configuration)
+
+*Instance type (Compare instance types)
+
+*Key pair(login)
+(you can use a key pair to securely connect to yuor instance)
+	
+	Create new key pair > key pair name<name of the key pair>
+				key pair type:RSA
+				Private key file format: .pem(For use with OpenSSH)
+							: .ppk(For use with PuTTY)
+				Create.
+
+*Network Settings
+(A security group is a set of firewall rules that control the traffic for your instance. 
+Add rules to allow specific traffic to reach your instance.)
+
+*Configure Storage> As per your requiment.
+
+*Advanced details>
+(Here you can configure specific(static) details) ,Not required	
+
+*Launch instance

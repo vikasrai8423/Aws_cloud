@@ -1,0 +1,104 @@
+1) docker ps ==> To show only running containers
+
+2) docker ps -a ==> To show all containers(Running/Stopping)
+
+3) docker pull ==> Pulling the image from docker hub
+
+4) docker run <image name/image id> ==> Start the container using image
+
+5) docker run --name <give the name: e.g. v1,demo,web1,etc.> <image name/image id> ==> Run the container with spcific name
+
+6) docker run --name <name> -d -p 8080:80 <image name/image id> ==> Run the container with port binding
+			-d => detached mode(To exclude Logs of container)
+			-p => port (8080 is the machine port and 80 is httpd/nginx/image/service port)
+			-ti => attach terminal(specific for ubuntu,centos,linux image)
+
+7) docker start <container id/container name> ==> Start the container 
+	This command is only run when container is already created.
+
+8) docker stop <container id/container name> ==> Stop the container
+
+9) docker rm <container id/container name> ==> remove the container
+
+10) docker rmi <image name/image id> ==> remove the image
+
+11) docker logs <container id/container name> ==> logs of container
+
+12) docker login ==> Login your docker hub account
+
+13) docker build -t <image name:tag> ==> Build/ Create your Image using Dockerfile
+
+14) docker tag <created_image:tag> <username_of_dockerhub_account/repo:tag> ==> Change the tag for PUSH the image.
+
+15) docker push <username_of_dockerhub_account/repo:tag> ==> Push the image to remote repository of Docker in your account.
+
+Following some extra commands:
+16) docker network ls ==> List the network 
+
+17) docker network create <name> ==> create the network 
+
+18) docker network rm <name> ==> remove network
+
+----------------------------------------------------------------------------------------------
+
+docker-compose: 
+			This is a tool for defining and running multiple container Docker application. With Compose, you use a YAML file to configure your application's.
+
+			E.g:
+				version: '3.9'		---> This is version of docker-compose
+				services:			---> service of docker		
+				    web1:			---> Container name
+					image: httpd	---> image name
+					ports:
+					   - 8001:80	---> Port Binding
+					volumes:
+					   - /app1/:/usr/local/apache2/htdocs/	--->Docker Volume Mapping
+				    web2:
+					image: httpd
+					ports:
+					   - 8002:80
+					volumes:
+					   - /app2/:/usr/local/apache2/htdocs/
+				    demo:
+					image: ubuntu
+					stdin_open: true  ---> making interactive
+					tty: true 		---> tells Docker to allocate a virtual terminal session within the container
+
+external: True flag is used to make the containers join a pre-existing network instead
+
+Save as a <name_of_file>.yaml
+
+After creating YAML file run this command
+
+1) docker-compose -f <name_of_file>.yaml up  ==> Create the multiple container
+
+2) docker-compose -f <name_of_file>.yaml down ==> Stop and Delete the container at a time
+
+---------------------------------------------------------------------------------------------
+
+----------
+Dockerfile
+----------
+Docker can build images automatically by reading the instructions from a Dockerfile. It is a text file documents that contain all the commands a user could call on the command line to assemble an image. 
+
+		e.g. 	FROM ubuntu
+			RUN apt update -y
+			RUN apt install python3 -y
+			RUN mkdir /app
+			COPY prog_1.py /app/
+			CMD ["python3", "/app/prog_1.py"]
+
+FROM ==> Pull the image
+RUN ==> Run the command inside the container
+COPY ==> copy the file or data from host machine to container path
+CMD ==> Execute or Run the program/application
+
+Application or Program should be save in same directory
+
+After that run this command to create the image
+docker build -t <image name whatever you want:tag> .
+
+'.' means current directory
+
+
+Only one Dockerfile will create for one image and name should be "Dockerfile" . 

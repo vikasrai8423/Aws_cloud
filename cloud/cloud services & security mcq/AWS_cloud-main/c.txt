@@ -1,0 +1,11 @@
+1(a).create an Amazon EC2 Instance with 1GB of primary memory,30GB of secondary storage with operating system as ubantu attach each and every screenshot and highlight every step.
+
+
+
+
+1(b).on this above created Amazon EC2 Instance deploy and execute CODE(any programming language) to print your name,PRN NUMBER.Attach each and every screenshot and highlight every step.
+
+
+2(a).Demonstrate any five command of git with examples.Attach Screenshots?
+
+2(b).create a jenkins pipeline to pull the github repo add build steps,compile any code of your choice.manually trigger jenkins pipeline.submit steps and sceenshorts that will show successful build and output?

@@ -1,0 +1,35 @@
+which git            
+git --version
+apt install git -y
+mkdir gitlab
+cd gitlab/                                                       create repository --> new --> repository name -->
+pwd
+git clone htts://github/vikasrai8423/hpcsa-lab055.git             add README file --> create repository-->copylink
+ls
+ls -ll
+cd hpcsa-lab055/
+ls -----------------> o/p---> README.md
+ls -la --------------> .git
+touch file{1..5}
+ls
+git add -A
+git status
+git commit -m "first commit"
+git config --global user.email"vikasrai8423@gmail.com"
+git commit -m "first commit"
+git push -u origin master
+user---> vikasrai8423
+password-----> paste the link from git hub           setting--> developer setting--> personal access token -->
+                                                     token classic--> generate token-->select classic-->hpcsalab
+                                                     exp.30 days -->select scope -->click repo -->delete repo
+                                                     generate token --> copy token
+
+
+ls
+touch file7
+git add -A
+git status 
+git commit -m "second commit"
+git push -u origin master
+user---->
+password----->
